@@ -14,7 +14,7 @@ logInfo('Server started and listening on port 3000');
 app.get('/employees', async (req, res) => {
     try {
         // Log the request details
-        logInfo('Received request to fetch all employees');
+        logInfo('Received request to fetch all employees. Endpoint ', req.url);
 
         const employees = await readRecords('Employees');
         res.status(200).json(employees);
