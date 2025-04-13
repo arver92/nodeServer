@@ -1,0 +1,13 @@
+{
+  "body": {
+    "content": "ewogICAgIkZpcnN0TmFtZSI6ICJTYXJhaCIsCiAgICAiTGFzdE5hbWUiOiAiSm9obnNvbiIsCiAgICAiRW1haWwiOiAic2FyYWguam9obnNvbkBleGFtcGxlLmNvbSIsCiAgICAiSGlyZURhdGUiOiAiMjAyNS0wNC0xMyIsCiAgICAiU2FsYXJ5IjogNTgwMDAuMDAsCiAgICAiRGVwYXJ0bWVudElEIjogMwp9",
+    "file": false,
+    "fileSize": false
+  },
+  "headers": {
+    "content-type": "application/json"
+  },
+  "method": "POST",
+  "title": "EmployeeAPITest",
+  "url": "http://localhost:3000/Employees"
+}

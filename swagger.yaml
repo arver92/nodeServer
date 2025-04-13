@@ -1,0 +1,119 @@
+openapi: 3.0.4
+info:
+  title: Employee API
+  description: API for managing employees.
+  version: 1.0.0
+servers:
+  - url: http://localhost:3000
+paths:
+  /employees:
+    get:
+      summary: Get all employees
+      description: Fetches all employees from the database.
+      responses:
+        '200':
+          description: A list of employees.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Employee'
+        '500':
+          description: Failed to fetch employees.
+    post:
+      summary: Create a new employee
+      description: Adds a new employee to the database.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Employee'
+      responses:
+        '201':
+          description: Employee created successfully.
+        '500':
+          description: Failed to create employee.
+  /employees/{id}:
+    get:
+      summary: Get an employee by ID
+      description: Fetches a specific employee by their ID.
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Employee details.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Employee'
+        '404':
+          description: Employee not found.
+        '500':
+          description: Failed to fetch employee.
+    put:
+      summary: Update an employee by ID
+      description: Updates an existing employee's details.
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Employee'
+      responses:
+        '200':
+          description: Employee updated successfully.
+        '500':
+          description: Failed to update employee.
+    delete:
+      summary: Delete an employee by ID
+      description: Deletes an employee from the database.
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Employee deleted successfully.
+        '500':
+          description: Failed to delete employee.
+components:
+  schemas:
+    Employee:
+      type: object
+      properties:
+        EmployeeID:
+          type: integer
+          description: Unique identifier for the employee.
+        FirstName:
+          type: string
+          description: First name of the employee.
+        LastName:
+          type: string
+          description: Last name of the employee.
+        Email:
+          type: string
+          description: Email address of the employee.
+        HireDate:
+          type: string
+          format: date
+          description: Date the employee was hired.
+        Salary:
+          type: number
+          description: Salary of the employee.
+        DepartmentID:
+          type: integer
+          description: ID of the department the employee belongs to.

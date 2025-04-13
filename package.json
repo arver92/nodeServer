@@ -1,0 +1,16 @@
+{
+  "name": "node-server",
+  "version": "1.0.0",
+  "description": "Node server to connect with SQL server database",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Arvind Verma",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.1.0",
+    "mssql": "^11.0.1",
+    "winston": "^3.17.0"
+  }
+}
