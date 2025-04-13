@@ -24,5 +24,5 @@ The Employee API is a RESTful API built with Node.js and Express. It provides en
 
 1. Clone the repository:
    ```bash
-   git clone <repository-url>
-   cd <repository-folder>
+   git clone https://github.com/arver92/nodeServer.git
+   cd nodeServer
